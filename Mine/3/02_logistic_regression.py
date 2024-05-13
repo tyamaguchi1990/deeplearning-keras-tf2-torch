@@ -30,9 +30,17 @@ if __name__ == '__main__':
     '''
     1. データの準備
     '''
-    # OR
+    # AND
     x = np.array([[0,0], [0, 1], [1,0], [1,1]])
-    t = np.array([0, 1, 1, 1])
+    t = np.array([0, 0, 0, 1])
+
+    # OR
+    # x = np.array([[0,0], [0, 1], [1,0], [1,1]])
+    # t = np.array([0, 1, 1, 1])
+
+    # XOR
+    # x = np.array([[0,0], [0, 1], [1,0], [1,1]])
+    # t = np.array([0, 1, 1, 0])
 
     '''
     2. モデルの構築
@@ -53,7 +61,7 @@ if __name__ == '__main__':
         loss = compute_loss(t, model(x))
         return loss
     
-    epochs = 100
+    epochs = 1000
 
     for epoch in range(epochs):
         train_loss = train_step(x, t) # Batch
